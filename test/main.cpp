@@ -44,6 +44,7 @@ extern void testLala();
 extern void testEva();
 extern void testEasing();
 extern void testZazel();
+extern void testLockhart();
 
 //external performance tests
 extern void initPerf();
@@ -84,6 +85,7 @@ int main (int argc, char** argv)
 
     // run external tests defined above
 
+    testLockhart();
     testLala();
     testUtilityFilter();
     testEva();

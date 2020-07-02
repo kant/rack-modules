@@ -25,6 +25,7 @@
 #include "AudioMath.h"
 #include <memory>
 #include <vector>
+#include <map>
 #include <time.h>
 
 namespace rack
@@ -254,8 +255,20 @@ public:
         NUM_LIGHTS
     };
 
+    static constexpr int controllerGridWidth = 8;
+    static constexpr int controllerGridHeight = 8;
+    static constexpr int gridPages = 4;
+    static constexpr int maxLockhartPerExteranlController = 4;
+
     float sampleRate = 1.0f;
     float sampleTime = 1.0f;
+    std::map<int, int> controllerGridMidiKey;
+
+    /// index used for paramid, lightid and controllerGrid index
+    static constexpr int getControllerGridIndex (int x, int y) noexcept
+    {
+        return x + y * controllerGridWidth;
+    }
 
     void setSampleRate (float rate)
     {
