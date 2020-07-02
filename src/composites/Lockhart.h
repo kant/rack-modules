@@ -269,6 +269,8 @@ public:
     {
         return x + y * controllerGridWidth;
     }
+    float sampleRate = 1.0f;
+    float sampleTime = 1.0f;
 
     void setSampleRate (float rate)
     {
